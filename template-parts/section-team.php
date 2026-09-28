@@ -24,7 +24,7 @@
       <article class="member reveal" itemscope itemtype="https://schema.org/Person">
         <div class="member-photo">
           <span class="ph-mono" aria-hidden="true">EW</span>
-          <img src="https://klarton.agency/wp-content/uploads/2026/09/Elena-Wagner-Klarton-Agency-scaled.png" alt="Elena Wagner, Senior Sales Expert für Ästhetische Medizin bei Klarton" loading="lazy" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'" itemprop="image">
+          <img src="https://klarton.agency/wp-content/uploads/2026/09/Elena-Wagner-Klarton-Agency-scaled.png" alt="Elena Wagner, Senior Sales Expert für Ästhetische Medizin bei Klarton" loading="lazy" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'" itemprop="image" style="background:#fff">
         </div>
         <div class="member-idx">(02)</div>
         <div class="member-name" itemprop="name">Elena Wagner</div>
