@@ -204,9 +204,8 @@ add_filter( 'script_loader_tag', function ( $tag, $handle ) {
 // Preload des Hero-Bildes (responsiv) zur Verbesserung des LCP
 add_action( 'wp_head', function () {
 	if ( ! is_front_page() ) return;
-	$a = get_stylesheet_directory_uri() . '/assets';
-	echo '<link rel="preload" as="image" href="' . esc_url( $a . '/hero-team.webp' ) . '" media="(min-width: 701px)" fetchpriority="high">' . "\n";
-	echo '<link rel="preload" as="image" href="' . esc_url( $a . '/klarton-team-mobile.webp' ) . '" media="(max-width: 700px)" fetchpriority="high">' . "\n";
+	$hero_img = 'https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg';
+	echo '<link rel="preload" as="image" href="' . esc_url( $hero_img ) . '" fetchpriority="high">' . "\n";
 }, 1 );
 
 // Meta-Descriptions fuer die Sektion-Seiten (an Rank Math liefern, falls dort leer).
@@ -226,7 +225,7 @@ add_filter( 'rank_math/frontend/description', function ( $desc ) {
 		'vergleich'   => 'Werbeagentur Zürich im Vergleich: Klarton gegen andere Agentur und In-House Team. Zertifizierter Google und Meta Partner, CPA-Modell, kein Langzeitvertrag.',
 		'fallstudien' => 'Fallstudien der Werbeagentur Klarton aus Zürich: echte Resultate mit Google Ads, Meta Ads und Leadgenerierung für Schweizer Unternehmen.',
 		'faq'         => 'Häufige Fragen zur Werbeagentur Klarton in Zürich: Kosten, Resultate, Google Ads und Meta Ads, Vertragslaufzeiten und Leadgenerierung.',
-		'team'        => 'Das Team von Klarton, der Performance Marketing Agentur aus Zürich. Spezialisten für Google Ads, Meta Ads, Funnel, UX und Sales.',
+		'team'        => 'Das Team von Klarton, der Performance Marketing Agentur aus Zürich. Sechs Spezialisten für Google Ads, Meta Ads, Funnel, UX, E-Commerce und Sales.',
 		'impressum'   => 'Impressum von Klarton, Online Marketing Agentur in Zürich. Anbieterin, Kontakt, UID und Haftungsausschluss.',
 		'datenschutz' => 'Datenschutzerklärung von Klarton gemäss Schweizer Datenschutzgesetz (revDSG): Datenbearbeitung, Cookies, Formulare und Ihre Rechte.',
 		'agb'         => 'Allgemeine Geschäftsbedingungen (AGB) von Klarton, Performance Marketing Agentur in Zürich.',
@@ -354,6 +353,55 @@ add_action( 'wp_head', function () {
 			'itemListElement' => $offers,
 		),
 		'knowsAbout'    => array( 'Google Ads', 'Meta Ads', 'SEA', 'Leadgenerierung', 'SEO', 'Conversion-Optimierung', 'Branding', 'Performance Marketing', 'Werbeagentur Zürich' ),
+		'employee'      => array(
+			array( '@type' => 'Person', 'name' => 'Alberto Holguín', 'jobTitle' => 'Founder & CEO', 'knowsAbout' => array( 'Google Ads', 'Social Media', 'Growth Strategy' ) ),
+			array( '@type' => 'Person', 'name' => 'Elena Wagner', 'jobTitle' => 'Senior Sales Expert – Ästhetische Medizin', 'knowsAbout' => array( 'Sales', 'Ästhetische Medizin', 'Patientengewinnung' ) ),
+			array( '@type' => 'Person', 'name' => 'Lautaro Weis', 'jobTitle' => 'Funnel-Architektur', 'knowsAbout' => array( 'Conversion Funnels', 'Meta Ads', 'Google Ads' ) ),
+			array( '@type' => 'Person', 'name' => 'Jack Troncos', 'jobTitle' => 'UX/UI Design', 'knowsAbout' => array( 'Shopify', 'WooCommerce', 'Landingpage Design' ) ),
+			array( '@type' => 'Person', 'name' => 'Mike Mueller', 'jobTitle' => 'Operations & Projektleitung', 'knowsAbout' => array( 'Projektmanagement', 'Kampagnen-Koordination' ) ),
+			array( '@type' => 'Person', 'name' => 'Julian Becker', 'jobTitle' => 'E-Commerce Sales & Growth Manager', 'knowsAbout' => array( 'E-Commerce', 'Sales Funnels', 'Customer Lifetime Value' ) ),
+		),
 	);
 	echo '<script type="application/ld+json">' . wp_json_encode( $ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
 }, 20 );
+
+// Team-Seite: AboutPage + Person JSON-LD fuer GEO/AI-Overviews und Knowledge Graph.
+add_action( 'wp_head', function () {
+	if ( ! is_page( 'team' ) ) {
+		return;
+	}
+	$org_url = home_url( '/#organization' );
+	$team = array(
+		array( 'name' => 'Alberto Holguín', 'jobTitle' => 'Founder & CEO', 'image' => get_stylesheet_directory_uri() . '/assets/team/alberto-holguin.webp', 'description' => 'Wachstumsstrategien, Google Ads und Social Media. Konzeption skalierbarer Systeme, die Akquisition, Conversion und Retention vereinen.', 'knowsAbout' => array( 'Google Ads', 'Social Media Marketing', 'Performance Marketing', 'Growth Strategy' ) ),
+		array( 'name' => 'Elena Wagner', 'jobTitle' => 'Senior Sales Expert – Ästhetische Medizin', 'image' => 'https://klarton.agency/wp-content/uploads/2026/09/Elena-Wagner-Klarton-Agency-scaled.png', 'description' => 'Sales und Growth für Ästhetische Medizin. Entwicklung diskreter und hocheffektiver Patientengewinnungsstrategien für Premium-Praxen und Kliniken.', 'knowsAbout' => array( 'Sales', 'Ästhetische Medizin', 'Patientengewinnung', 'Praxis-Marketing' ) ),
+		array( 'name' => 'Lautaro Weis', 'jobTitle' => 'Funnel-Architektur', 'image' => get_stylesheet_directory_uri() . '/assets/team/lautaro-weis.webp', 'description' => 'Conversion-Infrastrukturen und plattformübergreifende Funnels. Meta- und Google-Kampagnen mit Fokus auf CAC-Reduktion.', 'knowsAbout' => array( 'Conversion Funnels', 'Meta Ads', 'Google Ads', 'CAC-Optimierung' ) ),
+		array( 'name' => 'Jack Troncos', 'jobTitle' => 'UX/UI Design', 'image' => get_stylesheet_directory_uri() . '/assets/team/jack-troncos.webp', 'description' => 'Hochkonvertierendes Design für Shopify, WooCommerce und dedizierte Landingpages. Visuelle Verkaufspsychologie, die Traffic in Umsatz konvertiert.', 'knowsAbout' => array( 'UX Design', 'Shopify', 'WooCommerce', 'Landingpage Design' ) ),
+		array( 'name' => 'Mike Mueller', 'jobTitle' => 'Operations & Projektleitung', 'image' => get_stylesheet_directory_uri() . '/assets/team/mike-mueller.webp', 'description' => 'Projektkoordination und operative Abläufe. Sorgt dafür, dass Kampagnen, Deadlines und Reporting bei jedem Kunden reibungslos zusammenlaufen.', 'knowsAbout' => array( 'Projektmanagement', 'Operations', 'Kampagnen-Koordination' ) ),
+		array( 'name' => 'Julian Becker', 'jobTitle' => 'E-Commerce Sales & Growth Manager', 'image' => 'https://klarton.agency/wp-content/uploads/2026/09/Julian-Becker-scaled.jpg', 'description' => 'E-Commerce Sales und Skalierung. Transformation von Shop-Traffic in profitable Umsätze und Aufbau datengetriebener Sales-Funnels.', 'knowsAbout' => array( 'E-Commerce', 'Sales Funnels', 'Customer Lifetime Value', 'Datengetriebenes Marketing' ) ),
+	);
+	$persons = array();
+	foreach ( $team as $m ) {
+		$persons[] = array(
+			'@type'       => 'Person',
+			'name'        => $m['name'],
+			'jobTitle'    => $m['jobTitle'],
+			'image'       => $m['image'],
+			'description' => $m['description'],
+			'knowsAbout'  => $m['knowsAbout'],
+			'worksFor'    => array( '@type' => 'Organization', '@id' => $org_url, 'name' => 'Klarton' ),
+		);
+	}
+	$about = array(
+		'@context'    => 'https://schema.org',
+		'@type'       => 'AboutPage',
+		'name'        => 'Das Team von Klarton – Performance Marketing Agentur Zürich',
+		'description' => 'Sechs Spezialisten für Google Ads, Meta Ads, Funnel, UX, E-Commerce und Sales bei Klarton in Zürich.',
+		'mainEntity'  => array(
+			'@type'    => 'Organization',
+			'@id'      => $org_url,
+			'name'     => 'Klarton',
+			'employee' => $persons,
+		),
+	);
+	echo '<script type="application/ld+json">' . wp_json_encode( $about, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+}, 22 );

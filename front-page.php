@@ -43,7 +43,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 
 <!-- ════════ HERO ════════ -->
 <header class="hero">
-  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg')"></div>
   <div class="container hero-inner">
     <div class="hero-eyebrow">
       <span class="eyebrow on-dark"><span class="dot"></span>Performance Marketing &amp; Google Ads <span class="count">/ Zürich &amp; DACH</span></span>
@@ -177,7 +177,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
       <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="bereich-card reveal">
         <span class="bc-idx">06</span>
         <h3 class="bc-title">Team</h3>
-        <p class="bc-desc">Das Senior-Team hinter Klarton: fünf Spezialisten, fünf Domänen, ein gemeinsames Ziel.</p>
+        <p class="bc-desc">Das Senior-Team hinter Klarton: sechs Spezialisten, sechs Domänen, ein gemeinsames Ziel.</p>
         <span class="bc-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </div>
@@ -291,7 +291,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 
 <!-- ════════ KUNDENBINDUNG / RETENTION ════════ -->
 <section class="retention" id="kundenbindung">
-  <div class="ret-bg" data-parallax="0.08" role="img" aria-label="Zufriedene Kundin von Klarton im Beratungsgespräch"></div>
+  <div class="ret-bg" data-parallax="0.08" role="img" aria-label="Das Team von Klarton bei der Kaffeepause in Zürich" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Team-Kaffe-Pause-scaled.jpeg')"></div>
 
   <div class="ret-content">
     <span class="eyebrow on-dark reveal"><span class="dot"></span>Kundenbindung</span>
@@ -326,7 +326,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 
 <!-- ════════ TEAM-BAND (Landscape-Parallax mit Scroll-Fade) ════════ -->
 <section class="teamband" aria-label="Das Team von Klarton in Zürich">
-  <div class="tb-bg" data-parallax="0.10" data-fade role="img" aria-label="Das Team von Klarton im Büro in Zürich"></div>
+  <div class="tb-bg" data-parallax="0.10" data-fade role="img" aria-label="Das Team von Klarton, Werbeagentur Zürich" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Team-scaled.jpeg')"></div>
   <div class="tb-inner">
     <span class="eyebrow on-dark reveal"><span class="dot"></span>Menschen statt Versprechen</span>
     <h2 class="section-title reveal">Hinter jeder Zahl steht <em>ein Mensch.</em></h2>

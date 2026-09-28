@@ -13,7 +13,7 @@ $descs = array(
 	'vergleich'   => 'Werbeagentur Zürich im Vergleich: Klarton gegen andere Agentur und In-House Team. Zertifizierter Google und Meta Partner, CPA-Modell, kein Langzeitvertrag.',
 	'fallstudien' => 'Fallstudien der Werbeagentur Klarton aus Zürich: echte Resultate mit Google Ads, Meta Ads und Leadgenerierung für Schweizer Unternehmen.',
 	'faq'         => 'Häufige Fragen zur Werbeagentur Klarton in Zürich: Kosten, Resultate, Google Ads und Meta Ads, Vertragslaufzeiten und Leadgenerierung.',
-	'team'        => 'Das Team von Klarton, der Performance Marketing Agentur aus Zürich. Spezialisten für Google Ads, Meta Ads, Funnel, UX und Sales.',
+	'team'        => 'Das Team von Klarton, der Performance Marketing Agentur aus Zürich. Sechs Spezialisten für Google Ads, Meta Ads, Funnel, UX, E-Commerce und Sales.',
 );
 $meta_desc = isset( $descs[ $slug ] ) ? $descs[ $slug ] : '';
 
