@@ -32,6 +32,7 @@
           <li><a href="<?php echo esc_url( home_url( '/methodik/' ) ); ?>">Methodik</a></li>
           <li><a href="<?php echo esc_url( home_url( '/team/' ) ); ?>">Team</a></li>
           <li><a href="<?php echo esc_url( home_url( '/fallstudien/' ) ); ?>">Fallstudien</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>">Newsletter</a></li>
           <li><a href="#kontakt" data-audit>Kontakt</a></li>
         </ul>
       </div>

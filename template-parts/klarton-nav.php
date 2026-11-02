@@ -13,6 +13,7 @@
       <li><a href="<?php echo esc_url( home_url( '/fallstudien/' ) ); ?>">Fallstudien</a></li>
       <li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQ</a></li>
       <li><a href="<?php echo esc_url( home_url( '/team/' ) ); ?>">Team</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>">Newsletter</a></li>
     </ul>
     <a href="<?php echo esc_url( home_url( '/#kontakt' ) ); ?>" class="nav-cta" data-audit>Audit anfordern</a>
     <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
@@ -31,6 +32,7 @@
     <a href="<?php echo esc_url( home_url( '/fallstudien/' ) ); ?>" class="m-link">Fallstudien <span class="mi">04</span></a>
     <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="m-link">FAQ <span class="mi">05</span></a>
     <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="m-link">Team <span class="mi">06</span></a>
+    <a href="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" class="m-link">Newsletter <span class="mi">07</span></a>
     <a href="#kontakt" class="btn btn-primary m-cta" data-audit>Audit anfordern <span class="arr">&rarr;</span></a>
   </nav>
   <div class="m-foot">

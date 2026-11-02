@@ -5,6 +5,8 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'style', 'script', 'navigation-widgets' ) );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'editor-styles' );
 } );
 
 // Rechtsseiten sicherstellen (prueft bei jeder Aktivierung, ob alle drei existieren).
@@ -58,6 +60,23 @@ add_action( 'init', function () {
 		} elseif ( get_page_template_slug( $page->ID ) !== 'template-section.php' ) {
 			update_post_meta( $page->ID, '_wp_page_template', 'template-section.php' );
 		}
+	}
+} );
+
+// Newsletter-Seite sicherstellen (editierbar via Gutenberg).
+add_action( 'init', function () {
+	$page = get_page_by_path( 'newsletter' );
+	if ( ! $page ) {
+		wp_insert_post( array(
+			'post_title'    => 'Newsletter',
+			'post_name'     => 'newsletter',
+			'post_status'   => 'publish',
+			'post_type'     => 'page',
+			'post_content'  => '',
+			'page_template' => 'page-newsletter.php',
+		) );
+	} elseif ( get_page_template_slug( $page->ID ) !== 'page-newsletter.php' ) {
+		update_post_meta( $page->ID, '_wp_page_template', 'page-newsletter.php' );
 	}
 } );
 
@@ -229,6 +248,7 @@ add_filter( 'rank_math/frontend/description', function ( $desc ) {
 		'impressum'   => 'Impressum von Klarton, Online Marketing Agentur in Zürich. Anbieterin, Kontakt, UID und Haftungsausschluss.',
 		'datenschutz' => 'Datenschutzerklärung von Klarton gemäss Schweizer Datenschutzgesetz (revDSG): Datenbearbeitung, Cookies, Formulare und Ihre Rechte.',
 		'agb'         => 'Allgemeine Geschäftsbedingungen (AGB) von Klarton, Performance Marketing Agentur in Zürich.',
+		'newsletter'  => 'Klarton Newsletter: wöchentliche Insights zu Performance Marketing, Google Ads, Meta Ads und Wachstumsstrategien für Schweizer Unternehmen.',
 	);
 	$slug = get_post_field( 'post_name', get_queried_object_id() );
 	return isset( $map[ $slug ] ) ? $map[ $slug ] : $desc;
