@@ -63,7 +63,7 @@ add_action( 'init', function () {
 	}
 } );
 
-// Newsletter-Seite sicherstellen (editierbar via Gutenberg).
+// Newsletter-Seite sicherstellen (Archiv-Seite fuer Newsletter-Posts).
 add_action( 'init', function () {
 	$page = get_page_by_path( 'newsletter' );
 	if ( ! $page ) {
@@ -77,6 +77,14 @@ add_action( 'init', function () {
 		) );
 	} elseif ( get_page_template_slug( $page->ID ) !== 'page-newsletter.php' ) {
 		update_post_meta( $page->ID, '_wp_page_template', 'page-newsletter.php' );
+	}
+
+	// Kategorie "Newsletter" automatisch anlegen
+	if ( ! term_exists( 'newsletter', 'category' ) ) {
+		wp_insert_term( 'Newsletter', 'category', array(
+			'slug'        => 'newsletter',
+			'description' => 'Wöchentliche Newsletter-Ausgaben von Klarton.',
+		) );
 	}
 } );
 
