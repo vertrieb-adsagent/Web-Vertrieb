@@ -228,12 +228,7 @@ add_filter( 'script_loader_tag', function ( $tag, $handle ) {
 	return $tag;
 }, 10, 2 );
 
-// Preload des Hero-Bildes (responsiv) zur Verbesserung des LCP
-add_action( 'wp_head', function () {
-	if ( ! is_front_page() ) return;
-	$hero_img = 'https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg';
-	echo '<link rel="preload" as="image" href="' . esc_url( $hero_img ) . '" fetchpriority="high">' . "\n";
-}, 1 );
+// Hero-Bild Preload entfaellt: neuer Hero nutzt Bone-Hintergrund ohne Foto.
 
 // Meta-Descriptions fuer die Sektion-Seiten (an Rank Math liefern, falls dort leer).
 add_filter( 'rank_math/frontend/description', function ( $desc ) {
@@ -241,7 +236,7 @@ add_filter( 'rank_math/frontend/description', function ( $desc ) {
 		return $desc;
 	}
 	if ( is_front_page() || is_home() ) {
-		return 'Online Marketing Agentur in Zürich für Performance Marketing: Google Ads, Meta Ads, SEA, Leadgenerierung und SEO. Zertifizierter Google und Meta Partner, datenbasiert auf Umsatz und Leads.';
+		return 'Google, Meta und LinkedIn Ads für Schweizer Unternehmen, die Kunden statt Klicks wollen. Zertifizierter Google und Meta Partner aus Zürich, datenbasiert auf Umsatz und Leads.';
 	}
 	if ( ! is_page() ) {
 		return $desc;
@@ -287,7 +282,7 @@ add_filter( 'rank_math/opengraph/twitter/image', function ( $image ) {
 
 // Startseiten-Titel auf das Haupt-Keyword setzen (statt "Home - Klarton Agency").
 add_filter( 'rank_math/frontend/title', function ( $title ) {
-	return is_front_page() ? 'Werbeagentur Zürich · Performance Marketing & Google Ads | Klarton' : $title;
+	return is_front_page() ? 'Google, Meta & LinkedIn Ads für Schweizer Unternehmen | Klarton' : $title;
 } );
 
 // Rechtsseiten von der Indexierung ausschliessen (noindex), Crawl-Budget lenken.

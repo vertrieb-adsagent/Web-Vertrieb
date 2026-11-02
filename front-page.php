@@ -42,30 +42,40 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 <?php get_template_part( 'template-parts/klarton-nav' ); ?>
 
 <!-- ════════ HERO ════════ -->
-<header class="hero">
-  <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg')"></div>
+<style>
+.hero--light{background:var(--bone);color:var(--navy);min-height:auto;padding:200px 0 0}
+.hero--light .hero-bg,.hero--light::before,.hero--light::after{display:none}
+.hero--light h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,8vw,7rem);line-height:1.02;letter-spacing:-.02em;color:var(--navy);max-width:18ch}
+.hero--light h1 em{font-style:italic;color:var(--rot)}
+.hero--light .hero-sub{font-family:'Open Sans',var(--body);font-size:1.125rem;color:var(--navy);max-width:48ch;line-height:1.7;margin-top:28px}
+.hero--light .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:36px}
+.hero--light .btn-primary{background:var(--rot);color:#fff;border-color:var(--rot)}
+.hero--light .btn-primary:hover{background:var(--navy);border-color:var(--navy)}
+.hero--light .hero-link{font-family:'Open Sans',var(--body);font-size:.9375rem;color:var(--navy);text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.hero--light .hero-link:hover{color:var(--rot)}
+.hero--light .hero-trust{font-family:'Open Sans',var(--body);font-size:.8125rem;color:rgba(26,54,93,.7);margin-top:28px;letter-spacing:.01em}
+.hero--light .hero-lower{grid-template-columns:1fr;gap:0;padding-bottom:56px}
+.hero--light .marquee{border-color:rgba(26,54,93,.12)}
+.hero--light .marquee-track span{color:var(--navy);opacity:.5}
+@media(max-width:540px){
+  .hero--light{padding:140px 0 0}
+  .hero--light h1{font-size:clamp(2.2rem,10vw,3.2rem)}
+}
+</style>
+<header class="hero hero--light">
   <div class="container hero-inner">
-    <div class="hero-eyebrow">
-      <span class="eyebrow on-dark"><span class="dot"></span>Performance Marketing &amp; Google Ads <span class="count">/ Zürich &amp; DACH</span></span>
-    </div>
     <h1>
-      <span class="line h1-kicker"><span>Werbeagentur Zürich.</span></span>
-      <span class="line"><span>Performance Marketing</span></span>
-      <span class="line"><span>in <em>klarem Ton.</em></span></span>
+      <span class="line"><span>Richtig gemacht.</span></span>
+      <span class="line"><span>Messbar <em>verkauft.</em></span></span>
     </h1>
     <div class="hero-lower">
-      <p class="hero-sub">In einem Markt voller Rauschen liefern wir die klare Note. Jede Kampagne, jeder Lead, jeder investierte Franken in der richtigen Frequenz. Präzision wie Schweizer Uhrmacherkunst, skalierbar bis ins Enterprise-Segment.</p>
-      <div class="hero-right">
-        <div class="eq big" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <p class="hero-sub">Google, Meta und LinkedIn Ads für Schweizer Unternehmen,<br>die Kunden statt Klicks wollen.</p>
         <div class="hero-actions">
-          <a href="<?php echo esc_url( home_url( '/fallstudien/' ) ); ?>" class="btn btn-primary">Fallstudien ansehen <span class="arr">&rarr;</span></a>
-          <a href="<?php echo esc_url( home_url( '/leistungen/' ) ); ?>" class="btn btn-ghost">Unsere Leistungen</a>
+          <a href="#kontakt" class="btn btn-primary" data-audit>Kostenloses Erstgespräch buchen <span class="arr">&rarr;</span></a>
+          <a href="#cases" class="hero-link">Ergebnisse ansehen &rarr;</a>
         </div>
-        <div class="hero-badges">
-          <img class="hero-badge" src="<?php echo $assets; ?>/partners/google-partner.webp" alt="Google Partner Premier 2024" width="222" height="180" loading="lazy" decoding="async">
-          <img class="hero-badge" src="<?php echo $assets; ?>/partners/meta-partner.webp" alt="Meta Business Partner" width="339" height="180" loading="lazy" decoding="async">
-          <span class="meta-text">DACH-Spezialist</span>
-        </div>
+        <p class="hero-trust">Google Partner · Meta Partner · Aus Zürich</p>
       </div>
     </div>
   </div>
