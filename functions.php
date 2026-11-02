@@ -228,7 +228,12 @@ add_filter( 'script_loader_tag', function ( $tag, $handle ) {
 	return $tag;
 }, 10, 2 );
 
-// Hero-Bild Preload entfaellt: neuer Hero nutzt Bone-Hintergrund ohne Foto.
+// Preload des Hero-Bildes (responsiv) zur Verbesserung des LCP
+add_action( 'wp_head', function () {
+	if ( ! is_front_page() ) return;
+	$hero_img = 'https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg';
+	echo '<link rel="preload" as="image" href="' . esc_url( $hero_img ) . '" fetchpriority="high">' . "\n";
+}, 1 );
 
 // Meta-Descriptions fuer die Sektion-Seiten (an Rank Math liefern, falls dort leer).
 add_filter( 'rank_math/frontend/description', function ( $desc ) {
@@ -282,7 +287,7 @@ add_filter( 'rank_math/opengraph/twitter/image', function ( $image ) {
 
 // Startseiten-Titel auf das Haupt-Keyword setzen (statt "Home - Klarton Agency").
 add_filter( 'rank_math/frontend/title', function ( $title ) {
-	return is_front_page() ? 'Google, Meta & LinkedIn Ads für Schweizer Unternehmen | Klarton' : $title;
+	return is_front_page() ? 'Google, Meta & LinkedIn Ads - Kunden statt Klicks | Klarton Zürich' : $title;
 } );
 
 // Rechtsseiten von der Indexierung ausschliessen (noindex), Crawl-Budget lenken.
