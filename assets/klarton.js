@@ -74,7 +74,7 @@ const reduceMotionGlobal = window.matchMedia('(prefers-reduced-motion: reduce)')
     runPar();
   }
 
-  // ── Scroll-Fade für Bänder (data-fade) — läuft auch im reduced-motion Modus ──
+  // ── Scroll-Fade für Bänder (data-fade): läuft auch im reduced-motion Modus ──
   const fadeEls = document.querySelectorAll('[data-fade]');
   if (fadeEls.length) {
     let fTick = false;

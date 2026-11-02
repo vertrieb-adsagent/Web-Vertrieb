@@ -42,6 +42,8 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 <?php get_template_part( 'template-parts/klarton-nav' ); ?>
 
 <!-- ════════ HERO ════════ -->
+<div class="seite">
+
 <header class="hero">
   <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Agency-Team-scaled.jpeg')"></div>
   <div class="container hero-inner">
@@ -112,77 +114,109 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 </section>
 
 <!-- ════════ ZITAT 1 ════════ -->
-<section class="qb qb-dark">
+<section class="qb qb-dark sec-hell">
   <div class="container"><div class="qb-inner reveal">
     <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
     <blockquote>"Top Service und sehr angenehme Betreuung. Das Team war jederzeit hilfsbereit, freundlich und engagiert. Der ganze Ablauf war unkompliziert und professionell."</blockquote>
-    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/atef-khelil.webp" alt="Atef Khelil" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>A</span></span><span class="v-text"><span class="v-name">Atef Khelil</span><span class="v-role">Inhaber Autohändler · swisscarmarket.ch</span></span></div>
+    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/atef-khelil.webp" alt="Atef Khelil, Inhaber Swiss Carmarket und Kunde von Klarton" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>A</span></span><span class="v-text"><span class="v-name">Atef Khelil</span><span class="v-role">Inhaber Autohändler · swisscarmarket.ch</span></span></div>
   </div></div>
 </section>
 
-<!-- ════════ BEREICHE (Hub-Übersicht) ════════ -->
-<style>
-.bereiche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.bereich-card{background:#fff;border:1px solid var(--bone-line);border-radius:18px;padding:40px 32px 36px;display:flex;flex-direction:column;text-decoration:none;color:var(--navy);position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
-.bereich-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(26,54,93,.12);border-color:rgba(26,54,93,.22)}
-.bc-idx{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--rot);margin-bottom:16px}
-.bc-title{font-family:var(--serif);font-weight:400;font-size:1.75rem;letter-spacing:-.01em;margin-bottom:10px}
-.bc-desc{font-size:.9375rem;color:var(--muted);line-height:1.6;flex:1}
-.bc-arrow{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--bone-line);font-size:18px;color:var(--navy);margin-top:20px;transition:background .25s,color .25s,border-color .25s,transform .25s;align-self:flex-end}
-.bereich-card:hover .bc-arrow{background:var(--rot);border-color:var(--rot);color:#fff;transform:translateX(4px)}
-@media(max-width:860px){.bereiche-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.bereiche-grid{grid-template-columns:1fr;gap:16px}.bereich-card{padding:28px 24px 24px}}
-</style>
-<section class="bereiche" id="bereiche">
+<!-- ════════ EIN TEAM. EIN WORKFLOW. ════════ -->
+<section class="workflow" aria-labelledby="workflow-titel">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Bereiche</span>
-      <div>
-        <h2 class="section-title">Alles, was Ihr <em>Wachstum braucht.</em></h2>
-        <p class="section-intro" style="margin-top: 28px;">Sechs Bereiche, ein Ziel: messbarer Umsatz. Entdecken Sie unsere Kompetenzen im Detail.</p>
-      </div>
+    <div class="wf-kopfzeile reveal">
+      <span class="eyebrow"><span class="dot"></span>So arbeiten wir</span>
+      <h2 class="section-title" id="workflow-titel">Ein Team. Ein Workflow. <em>Null Reibung.</em></h2>
     </div>
+    <div class="wf-grid">
 
-    <div class="bereiche-grid">
-      <a href="<?php echo esc_url( home_url( '/leistungen/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">01</span>
-        <h3 class="bc-title">Leistungen</h3>
-        <p class="bc-desc">10 Leistungen für digitales Wachstum: von Branding und Google Ads bis Conversion-Optimierung.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
+      <a class="wf-karte wf-team reveal" href="<?php echo esc_url( home_url( '/team/' ) ); ?>">
+        <div class="wf-band" aria-hidden="true"><div class="wf-spur">
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/alberto-holguin.webp" alt="Alberto Holguín, Founder und CEO bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Alberto Holguín</strong><span>Founder &amp; CEO</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/lautaro-weis.webp" alt="Lautaro Weis, Funnel-Architektur bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Lautaro Weis</strong><span>Funnel-Architektur</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/jack-troncos.webp" alt="Jack Troncos, UX/UI Design bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Jack Troncos</strong><span>UX/UI Design</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/mike-mueller.webp" alt="Mike Müller, Operations bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Mike Müller</strong><span>Operations</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/alberto-holguin.webp" alt="Alberto Holguín, Founder und CEO bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Alberto Holguín</strong><span>Founder &amp; CEO</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/lautaro-weis.webp" alt="Lautaro Weis, Funnel-Architektur bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Lautaro Weis</strong><span>Funnel-Architektur</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/jack-troncos.webp" alt="Jack Troncos, UX/UI Design bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Jack Troncos</strong><span>UX/UI Design</span></figcaption></figure>
+            <figure class="wf-kopf"><img src="<?php echo $assets; ?>/team/mike-mueller.webp" alt="Mike Müller, Operations bei Klarton" loading="lazy" decoding="async" width="200" height="240"><figcaption><strong>Mike Müller</strong><span>Operations</span></figcaption></figure>
+        </div></div>
+        <div class="wf-text">
+          <h3>Feste Gesichter, keine Fluktuation.</h3>
+          <p>Dieselben Leute von der Strategie bis zum Reporting. Sie erklären Ihr Geschäft einmal, nicht bei jedem Wechsel neu.</p>
+          <span class="wf-link">Team kennenlernen <span class="arr">&rarr;</span></span>
+        </div>
       </a>
-      <a href="<?php echo esc_url( home_url( '/methodik/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">02</span>
-        <h3 class="bc-title">Methodik</h3>
-        <p class="bc-desc">Sechs datenbasierte Schritte: vom Tracking-Audit bis zur Kundenwert-Maximierung.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a href="<?php echo esc_url( home_url( '/fallstudien/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">03</span>
-        <h3 class="bc-title">Fallstudien</h3>
-        <p class="bc-desc">13 echte Kundenprojekte mit messbaren Resultaten aus Google Ads, Meta Ads und Leadgenerierung.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a href="<?php echo esc_url( home_url( '/vergleich/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">04</span>
-        <h3 class="bc-title">Vergleich</h3>
-        <p class="bc-desc">Klarton vs. andere Agentur vs. In-House Team: Spezialisierung, Transparenz und Kosten im Direktvergleich.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">05</span>
-        <h3 class="bc-title">FAQ</h3>
-        <p class="bc-desc">Antworten auf die häufigsten Fragen zu Kosten, Resultaten, Vertragslaufzeiten und Zusammenarbeit.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a href="<?php echo esc_url( home_url( '/team/' ) ); ?>" class="bereich-card reveal">
-        <span class="bc-idx">06</span>
-        <h3 class="bc-title">Team</h3>
-        <p class="bc-desc">Das Senior-Team hinter Klarton: sechs Spezialisten, sechs Domänen, ein gemeinsames Ziel.</p>
-        <span class="bc-arrow" aria-hidden="true">&rarr;</span>
-      </a>
+
+      <article class="wf-karte wf-uhr reveal">
+        <div class="wf-phone">
+          <span class="wf-datum" id="wfDatum">Heute</span>
+          <span class="wf-zeit" id="wfZeit">--:--</span>
+          <ul class="wf-noti">
+            <li style="--verzug: 0s"><span class="wf-punkt" aria-hidden="true"></span><span class="wf-ntext"><strong>Neue Anfrage</strong><span>Bodenbelag, 180 m², Bern</span></span></li>
+            <li style="--verzug: 2.6s"><span class="wf-punkt" aria-hidden="true"></span><span class="wf-ntext"><strong>Neue Anfrage</strong><span>Kieferorthopädie, Zürich</span></span></li>
+            <li style="--verzug: 5.2s"><span class="wf-punkt" aria-hidden="true"></span><span class="wf-ntext"><strong>Termin gebucht</strong><span>Erstgespräch, Donnerstag</span></span></li>
+          </ul>
+        </div>
+        <div class="wf-text">
+          <h3>Jede Anfrage landet sofort im System.</h3>
+          <p>Formular, Anruf oder WhatsApp: Der Lead ist erfasst, bewertet und zugewiesen, bevor jemand von Hand etwas abtippt.</p>
+        </div>
+      </article>
+
+      <article class="wf-karte wf-chart reveal">
+        <div class="wf-zahl">
+          <span class="wf-label">Abgeschlossene Projekte</span>
+          <strong>13</strong>
+          <div class="wf-balken" aria-hidden="true">
+              <span style="--h: 34%; --verzug: 0s"></span>
+              <span style="--h: 41%; --verzug: 0.07s"></span>
+              <span style="--h: 38%; --verzug: 0.14s"></span>
+              <span style="--h: 52%; --verzug: 0.21000000000000002s"></span>
+              <span style="--h: 47%; --verzug: 0.28s"></span>
+              <span style="--h: 61%; --verzug: 0.35000000000000003s"></span>
+              <span style="--h: 55%; --verzug: 0.42000000000000004s"></span>
+              <span style="--h: 68%; --verzug: 0.49000000000000005s"></span>
+              <span style="--h: 72%; --verzug: 0.56s"></span>
+              <span style="--h: 64%; --verzug: 0.6300000000000001s"></span>
+              <span style="--h: 79%; --verzug: 0.7000000000000001s"></span>
+              <span style="--h: 86%; --verzug: 0.77s"></span>
+              <span style="--h: 92%; --verzug: 0.8400000000000001s"></span>
+          </div>
+        </div>
+        <div class="wf-text">
+          <h3>Dokumentiert, nicht behauptet.</h3>
+          <p>Jedes Projekt mit Namen, Branche und Resultat. Nachlesbar in den Fallstudien, nicht nur auf dieser Seite.</p>
+        </div>
+      </article>
+
     </div>
   </div>
+  <script>
+  (function(){
+    var z=document.getElementById('wfZeit'), d=document.getElementById('wfDatum');
+    if(!z||!d) return;
+    var tage=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    var monate=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    function tick(){
+      var n=new Date();
+      z.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+      d.textContent=tage[n.getDay()]+', '+n.getDate()+'. '+monate[n.getMonth()];
+    }
+    function planen(){
+      tick();
+      var n=new Date();
+      setTimeout(planen, (60 - n.getSeconds()) * 1000 - n.getMilliseconds());
+    }
+    planen();
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) tick(); });
+  })();
+  </script>
 </section>
+
+<!-- ════════ LEISTUNGEN (Showcase, dieselbe Sektion wie auf /leistungen/) ════════ -->
+<?php get_template_part( 'template-parts/section-leistungen' ); ?>
 
 <!-- ════════ MARKENSYSTEM / DELIVERABLES ════════ -->
 <section class="marke" id="markensystem">
@@ -209,29 +243,109 @@ $assets = get_stylesheet_directory_uri() . '/assets';
       </article>
     </div>
 
-    <div class="marke-refs">
-      <article class="ref reveal">
-        <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/yp-projekt.webp" alt="YP Beauty Studio Wädenswil, Redesign von Klarton" loading="lazy"></div>
-        <div class="ref-person">
-          <img class="ref-ava" src="<?php echo $assets; ?>/people/yp-inhaberin.webp" alt="Yadira Perez, Inhaberin YP Beauty" loading="lazy">
-          <span class="ref-meta"><span class="ref-name">Yadira Perez</span><span class="ref-role">Inhaberin · YP Beauty Wädenswil</span></span>
+    <!-- Referenz-Karussell -->
+    <div class="marke-refs" style="position:relative;overflow:hidden;">
+      <div class="ref-carousel" id="refCarousel" style="display:flex;gap:32px;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform;">
+        <article class="ref reveal" style="min-width:100%;flex:0 0 100%;">
+          <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/villafloors-projekt.webp" alt="Villafloors Bern, Metallicboden aus einem Projekt von Klarton" loading="lazy" width="880" height="495"></div>
+          <div class="ref-person">
+            <img class="ref-ava" src="<?php echo $assets; ?>/people/villafloors.webp" alt="Das Villafloors Team" loading="lazy" width="220" height="220">
+            <span class="ref-meta"><span class="ref-name">Das Villafloors Team</span><span class="ref-role">Bodenbelag Premium · Bern</span></span>
+          </div>
+          <span class="rk">Zuletzt umgesetzt</span>
+          <h5>Villafloors</h5>
+          <p>Relaunch für den Premium-Bodenbelag aus Bern: eine Website, die das Handwerk zeigt, dazu Meta Ads, ein sauberer Funnel und ein CRM, das keine Anfrage mehr liegen lässt.</p>
+          <div class="rstats"><span class="rstat"><b>10</b><span>Leads pro Woche</span></span><span class="rstat"><b>Von 0</b><span>in kürzester Zeit</span></span></div>
+        </article>
+        <article class="ref reveal" style="min-width:100%;flex:0 0 100%;">
+          <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/medita-projekt.webp" alt="Medita Studio Zürich, neues Branding und Website von Klarton" loading="lazy" width="880" height="495"></div>
+          <div class="ref-person">
+            <img class="ref-ava" src="<?php echo $assets; ?>/people/medita-studio.webp" alt="Medita Studio Zürich" loading="lazy" width="220" height="220">
+            <span class="ref-meta"><span class="ref-name">Medita Studio</span><span class="ref-role">Körpertherapie · Zürich HB</span></span>
+          </div>
+          <span class="rk">Zuletzt umgesetzt</span>
+          <h5>Medita Studio</h5>
+          <p>Neupositionierung mit eigenem Branding: ruhige Bildsprache, klare Sprache und eine Terminbuchung, die rund um die Uhr ohne Rückfrage läuft. Sichtbar gemacht über Google SEO und Meta Ads.</p>
+          <div class="rstats"><span class="rstat"><b>15+</b><span>Anfragen pro Woche</span></span><span class="rstat"><b>24/7</b><span>Online-Buchung</span></span></div>
+        </article>
+        <article class="ref reveal" style="min-width:100%;flex:0 0 100%;">
+          <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/yp-projekt.webp" alt="YP Beauty Studio Wädenswil, Redesign von Klarton" loading="lazy"></div>
+          <div class="ref-person">
+            <img class="ref-ava" src="<?php echo $assets; ?>/people/yp-inhaberin.webp" alt="Yadira Perez, Inhaberin YP Beauty" loading="lazy">
+            <span class="ref-meta"><span class="ref-name">Yadira Perez</span><span class="ref-role">Inhaberin · YP Beauty Wädenswil</span></span>
+          </div>
+          <span class="rk">Zuletzt umgesetzt</span>
+          <h5>YP Beauty</h5>
+          <p>Komplettes Redesign für den Standort Wädenswil: exklusives Visual Branding aus Gold- und Cremetönen, ein Mobile-First-Erlebnis und automatisierte Buchung via Treatwell.</p>
+          <div class="rstats"><span class="rstat"><b>+45%</b><span>Online-Termine</span></span><span class="rstat"><b>Top 3</b><span>Google Ranking</span></span></div>
+        </article>
+        <article class="ref reveal" style="min-width:100%;flex:0 0 100%;">
+          <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/officekiel-projekt.webp" alt="Office Kiel, Relaunch und B2B-Positionierung von Klarton" loading="lazy"></div>
+          <div class="ref-person">
+            <img class="ref-ava" src="<?php echo $assets; ?>/people/office-kiel.webp" alt="Inna Kiel, Office Kiel" loading="lazy">
+            <span class="ref-meta"><span class="ref-name">Inna Kiel</span><span class="ref-role">Office Kiel</span></span>
+          </div>
+          <span class="rk">Zuletzt umgesetzt</span>
+          <h5>Office Kiel</h5>
+          <p>Digitale Transformation vom lokalen Anbieter zum Branchenführer: strategischer Relaunch, klare B2B-Positionierung und eine Website, die heute der stärkste Vertriebskanal ist.</p>
+          <div class="rstats"><span class="rstat"><b>+150%</b><span>Sichtbarkeit</span></span><span class="rstat"><b>Top 3</b><span>Google Ranking</span></span></div>
+        </article>
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px;">
+        <button class="ref-prev" aria-label="Vorheriges Projekt" style="width:48px;height:48px;border-radius:50%;border:1px solid var(--bone-line);background:#fff;color:var(--navy);font-size:20px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .25s,color .25s,border-color .25s;">&larr;</button>
+        <div class="ref-dots" style="display:flex;gap:8px;">
+          <span class="ref-dot active" data-slide="0" style="width:10px;height:10px;border-radius:50%;background:var(--rot);cursor:pointer;transition:background .3s;"></span>
+          <span class="ref-dot" data-slide="1" style="width:10px;height:10px;border-radius:50%;background:var(--bone-line);cursor:pointer;transition:background .3s;"></span>
+          <span class="ref-dot" data-slide="2" style="width:10px;height:10px;border-radius:50%;background:var(--bone-line);cursor:pointer;transition:background .3s;"></span>
+          <span class="ref-dot" data-slide="3" style="width:10px;height:10px;border-radius:50%;background:var(--bone-line);cursor:pointer;transition:background .3s;"></span>
         </div>
-        <span class="rk">Zuletzt umgesetzt</span>
-        <h5>YP Beauty</h5>
-        <p>Ganzheitliches Redesign für den Standort Wädenswil: exklusives Visual Branding aus Gold- und Cremetönen, ein Mobile-First-Erlebnis und automatisierte Buchung via Treatwell.</p>
-        <div class="rstats"><span class="rstat"><b>+45%</b><span>Online-Termine</span></span><span class="rstat"><b>Top 3</b><span>Google Ranking</span></span></div>
-      </article>
-      <article class="ref reveal">
-        <div class="ref-cover"><img src="<?php echo $assets; ?>/clients/officekiel-projekt.webp" alt="Office Kiel, Relaunch und B2B-Positionierung von Klarton" loading="lazy"></div>
-        <div class="ref-person">
-          <img class="ref-ava" src="<?php echo $assets; ?>/people/office-kiel.webp" alt="Inna Kiel, Office Kiel" loading="lazy">
-          <span class="ref-meta"><span class="ref-name">Inna Kiel</span><span class="ref-role">Office Kiel</span></span>
-        </div>
-        <span class="rk">Zuletzt umgesetzt</span>
-        <h5>Office Kiel</h5>
-        <p>Digitale Transformation vom lokalen Anbieter zum Branchenführer: strategischer Relaunch, klare B2B-Positionierung und eine Website, die heute der stärkste Vertriebskanal ist.</p>
-        <div class="rstats"><span class="rstat"><b>+150%</b><span>Sichtbarkeit</span></span><span class="rstat"><b>Top 3</b><span>Google Ranking</span></span></div>
-      </article>
+        <button class="ref-next" aria-label="Nächstes Projekt" style="width:48px;height:48px;border-radius:50%;border:1px solid var(--bone-line);background:#fff;color:var(--navy);font-size:20px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .25s,color .25s,border-color .25s;">&rarr;</button>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var track=document.getElementById('refCarousel');
+      if(!track) return;
+      var slides=track.children, idx=0, total=slides.length;
+      var dots=document.querySelectorAll('.ref-dot');
+      function go(n){
+        idx=((n%total)+total)%total;
+        track.style.transform='translateX(-'+idx*100+'%)';
+        dots.forEach(function(d,i){d.style.background=i===idx?'var(--rot)':'var(--bone-line)';});
+      }
+      document.querySelector('.ref-prev').addEventListener('click',function(){go(idx-1);});
+      document.querySelector('.ref-next').addEventListener('click',function(){go(idx+1);});
+      dots.forEach(function(d){d.addEventListener('click',function(){go(+d.dataset.slide);});});
+      var auto=setInterval(function(){go(idx+1);},5000);
+      track.closest('.marke-refs').addEventListener('mouseenter',function(){clearInterval(auto);});
+      track.closest('.marke-refs').addEventListener('mouseleave',function(){auto=setInterval(function(){go(idx+1);},5000);});
+      var sx=0,mx=false;
+      track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;mx=true;},{passive:true});
+      track.addEventListener('touchmove',function(e){if(!mx)return;var d=e.touches[0].clientX-sx;if(Math.abs(d)>40){go(d>0?idx-1:idx+1);mx=false;}},{passive:true});
+      track.addEventListener('touchend',function(){mx=false;},{passive:true});
+    })();
+    </script>
+  </div>
+</section>
+
+<!-- ════════ E-COMMERCE (Teaser zur Unterseite) ════════ -->
+<section class="shopteaser" id="ecommerce-teaser" aria-labelledby="shopteaser-titel">
+  <div class="container">
+    <div class="st-grid">
+      <div class="st-text reveal">
+        <span class="eyebrow"><span class="dot"></span>E-Commerce</span>
+        <h2 class="section-title" id="shopteaser-titel">Wir bauen Ihren Shop. <em>Und führen ihn weiter.</em></h2>
+        <p>Shopify, WooCommerce, Shopware oder Magento: Wir richten den Shop ein, verbinden Zahlung, Versand und Lager, und übernehmen danach den Betrieb. Der Produktfeed geht sauber an Google Merchant Center, damit Shopping und Performance Max Ihre Artikel dort zeigen, wo gesucht wird.</p>
+        <a href="<?php echo esc_url( home_url( '/ecommerce/' ) ); ?>" class="svc-cta st-cta">E-Commerce im Detail <span class="arr">&rarr;</span></a>
+      </div>
+      <ul class="st-logos reveal" aria-label="Shop-Plattformen, auf denen Klarton arbeitet">
+        <li><img src="<?php echo $assets; ?>/plattformen/shopify.webp" alt="Shopify Onlineshop, von Klarton aufgebaut und betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+        <li><img src="<?php echo $assets; ?>/plattformen/woocommerce.webp" alt="WooCommerce Onlineshop für WordPress, von Klarton betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+        <li><img src="<?php echo $assets; ?>/plattformen/shopware.webp" alt="Shopware Onlineshop für den DACH-Raum, von Klarton betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+        <li><img src="<?php echo $assets; ?>/plattformen/magento.webp" alt="Magento Onlineshop für grosse Sortimente, von Klarton betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+        <li><img src="<?php echo $assets; ?>/plattformen/gambio.webp" alt="Gambio Onlineshop, von Klarton übernommen und betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+        <li><img src="<?php echo $assets; ?>/plattformen/wix.webp" alt="Wix Onlineshop für kleine Sortimente, von Klarton betreut" loading="lazy" decoding="async" width="400" height="150"></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -241,7 +355,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
   <div class="container"><div class="qb-inner reveal">
     <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
     <blockquote>"Klarton ist für uns ein wichtiger und zuverlässiger Partner, bei welchem der Support schnell und zielorientiert abläuft. Sehr professionell, empfehlenswert."</blockquote>
-    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/yadira-perez.jpg" alt="Yadira Perez" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>Y</span></span><span class="v-text"><span class="v-name">Yadira Perez</span><span class="v-role">Inhaberin · YP Beauty</span></span></div>
+    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/yadira-perez.jpg" alt="Yadira Perez, Inhaberin YP Beauty in Wädenswil" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>Y</span></span><span class="v-text"><span class="v-name">Yadira Perez</span><span class="v-role">Inhaberin · YP Beauty</span></span></div>
   </div></div>
 </section>
 
@@ -262,7 +376,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
 </section>
 
 <!-- ════════ GARANTIE ════════ -->
-<section class="guarantee" id="garantie">
+<section class="guarantee sec-hell" id="garantie">
   <div class="container">
     <div class="g-head reveal">
       <span class="eyebrow on-dark"><span class="dot"></span>Unsere Garantie</span>
@@ -289,9 +403,34 @@ $assets = get_stylesheet_directory_uri() . '/assets';
   </div>
 </section>
 
+<!-- ════════ VERGLEICH (Teaser zur Unterseite) ════════ -->
+<section class="vgteaser" aria-labelledby="vgteaser-titel">
+  <div class="container">
+    <div class="vg-kopf reveal">
+      <span class="eyebrow"><span class="dot"></span>Klarton vs. Alternativen</span>
+      <h2 class="section-title" id="vgteaser-titel">Agentur, Inhouse <em>oder wir?</em></h2>
+      <p>Die ehrliche Gegenüberstellung. Nicht jede Zeile spricht für uns, und genau darum lohnt sich der Blick.</p>
+    </div>
+    <div class="vg-tabelle reveal">
+      <table>
+        <caption class="sr-only">Klarton im Vergleich zu einer anderen Agentur und einem eigenen Team</caption>
+        <thead><tr><td></td><th scope="col" class="vg-wir">Klarton</th><th scope="col">Andere Agentur</th><th scope="col">In-House</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Kein Langzeitvertrag</th><td class="vg-wir" data-spalte="Klarton"><span class="vg-ja" title="ja">&#10003;</span></td><td data-spalte="Andere Agentur"><span class="vg-nein" title="nein">&minus;</span></td><td data-spalte="In-House"><span class="vg-ja" title="ja">&#10003;</span></td></tr>
+          <tr><th scope="row">CPA-Modell, Sie zahlen für Resultate</th><td class="vg-wir" data-spalte="Klarton"><span class="vg-ja" title="ja">&#10003;</span></td><td data-spalte="Andere Agentur"><span class="vg-nein" title="nein">&minus;</span></td><td data-spalte="In-House"><span class="vg-nein" title="nein">&minus;</span></td></tr>
+          <tr><th scope="row">Zertifiziert bei Google und Meta</th><td class="vg-wir" data-spalte="Klarton"><span class="vg-ja" title="ja">&#10003;</span></td><td data-spalte="Andere Agentur"><span class="vg-teils" title="teilweise">&#176;</span></td><td data-spalte="In-House"><span class="vg-nein" title="nein">&minus;</span></td></tr>
+          <tr><th scope="row">Direkter Ansprechpartner statt Hotline</th><td class="vg-wir" data-spalte="Klarton"><span class="vg-ja" title="ja">&#10003;</span></td><td data-spalte="Andere Agentur"><span class="vg-nein" title="nein">&minus;</span></td><td data-spalte="In-House"><span class="vg-ja" title="ja">&#10003;</span></td></tr>
+          <tr><th scope="row">Onboarding in 48 Stunden</th><td class="vg-wir" data-spalte="Klarton"><span class="vg-ja" title="ja">&#10003;</span></td><td data-spalte="Andere Agentur"><span class="vg-nein" title="nein">&minus;</span></td><td data-spalte="In-House"><span class="vg-nein" title="nein">&minus;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="<?php echo esc_url( home_url( '/vergleich/' ) ); ?>" class="svc-cta vg-cta reveal">Ganzen Vergleich ansehen <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
 <!-- ════════ KUNDENBINDUNG / RETENTION ════════ -->
 <section class="retention" id="kundenbindung">
-  <div class="ret-bg" data-parallax="0.08" role="img" aria-label="Das Team von Klarton bei der Kaffeepause in Zürich" style="background-image:url('https://klarton.agency/wp-content/uploads/2026/09/Klarton-Team-Kaffe-Pause-scaled.jpeg')"></div>
+  <div class="ret-bg" data-parallax="0.08" role="img" aria-label="Beratungsgespräch bei Klarton in Zürich: gemeinsame Auswertung der Kampagnenzahlen am Laptop"></div>
 
   <div class="ret-content">
     <span class="eyebrow on-dark reveal"><span class="dot"></span>Kundenbindung</span>
@@ -320,7 +459,7 @@ $assets = get_stylesheet_directory_uri() . '/assets';
   <div class="container"><div class="qb-inner reveal">
     <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
     <blockquote>"Wenn Sie jemanden suchen, der Ihre Idee in einen leistungsstarken Online-Shop verwandelt, ist Klarton die richtige Agentur. Das Shopify-Know-how und die Fähigkeit, optimierte Shops für den Verkauf zu erstellen, sind herausragend. Absolute Empfehlung."</blockquote>
-    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/jaroslaw-sajzew.webp" alt="Jaroslaw Sajzew" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>J</span></span><span class="v-text"><span class="v-name">Jaroslaw Sajzew</span><span class="v-role">CEO &amp; Founder · YAKWARY S.A.R.L.</span></span></div>
+    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/jaroslaw-sajzew.webp" alt="Jaroslaw Sajzew, CEO von Yakwary und Kunde von Klarton" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>J</span></span><span class="v-text"><span class="v-name">Jaroslaw Sajzew</span><span class="v-role">CEO &amp; Founder · YAKWARY S.A.R.L.</span></span></div>
   </div></div>
 </section>
 
@@ -339,12 +478,12 @@ $assets = get_stylesheet_directory_uri() . '/assets';
   <div class="container"><div class="qb-inner reveal">
     <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
     <blockquote>"Der Relaunch und die darauffolgenden Meta Ads Kampagnen waren ein voller Erfolg. Von null auf 10 Leads pro Woche in kürzester Zeit, das hat unsere Erwartungen übertroffen."</blockquote>
-    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/villafloors.webp" alt="Villafloors" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>V</span></span><span class="v-text"><span class="v-name">Das Villafloors Team</span><span class="v-role">villafloors.ch · Bodenbelag Schweiz</span></span></div>
+    <div class="who"><span class="v-mono"><img src="<?php echo $assets; ?>/people/villafloors.webp" alt="Das Villafloors Team, Bodenbelag Premium aus Bern" loading="lazy" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'"><span>V</span></span><span class="v-text"><span class="v-name">Das Villafloors Team</span><span class="v-role">villafloors.ch · Bodenbelag Schweiz</span></span></div>
   </div></div>
 </section>
 
 <!-- ════════ AGENDA / BOOKING ════════ -->
-<section class="agenda" id="kontakt">
+<section class="agenda sec-hell" id="kontakt">
   <div class="container">
     <div class="agenda-grid">
       <div class="agenda-copy reveal">
@@ -360,18 +499,58 @@ $assets = get_stylesheet_directory_uri() . '/assets';
         <div class="agenda-meta">30 Min · kostenlos · unverbindlich · keine Verpflichtung</div>
       </div>
       <div class="agenda-cal reveal">
-        <iframe src="https://api.leadconnectorhq.com/widget/bookings/termin-buchung-RMctM" id="termin-buchung-RMctM" title="Kostenloses Erstgespräch buchen" style="width:100%;min-height:660px;border:0;display:block;background:#FAF7F2;" scrolling="no"></iframe>
+                <iframe src="https://api.leadconnectorhq.com/widget/booking/ewsFHEwaztVoA7RMljvL" id="ewsFHEwaztVoA7RMljvL" title="Kostenloses Erstgespräch buchen" style="width:100%;min-height:720px;border:0;display:block;background:transparent;" scrolling="no"></iframe>
       </div>
     </div>
 
-    <div class="agenda-form reveal">
-      <h3>Lieber schreiben? <em>Schreiben Sie uns.</em></h3>
-      <p>Kein passender Termin dabei? Hinterlassen Sie uns eine Nachricht, wir melden uns innerhalb von 24 Stunden.</p>
-      <iframe class="ghl-form-embed" src="https://api.leadconnectorhq.com/widget/form/dSYkpPkOObppoENNvbqk" style="width:100%;height:582px;border:none;border-radius:12px;margin-top:24px;background:#fff;" id="inline-dSYkpPkOObppoENNvbqk" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="Form Klarton" data-height="582" data-layout-iframe-id="inline-dSYkpPkOObppoENNvbqk" data-form-id="dSYkpPkOObppoENNvbqk" title="Form Klarton"></iframe>
+
+    <div class="kontakt-faq reveal">
+      <div class="kf-links">
+        <span class="eyebrow"><span class="dot"></span>Kontakt &amp; FAQ</span>
+        <span class="kf-bild"><img src="<?php echo $assets; ?>/team-kennenlernen.webp" alt="Das Team von Klarton Agency im Büro in Zürich, Performance Marketing für Schweizer Unternehmen" loading="lazy" decoding="async" width="900" height="506"></span>
+        <h3>Lernen wir uns <em>kennen.</em></h3>
+        <p>Erzählen Sie uns von Ihrem Vorhaben. Direkter Draht zum Gründer, ehrliche Einschätzung, klarer nächster Schritt. Unverbindlich und kostenlos.</p>
+        <a href="#kontakt" class="btn btn-primary" data-audit>Erstgespräch buchen <span class="arr">&rarr;</span></a>
+        <a href="#kontakt" class="btn btn-ghost kf-zweit" data-audit>Anfrage senden <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="kf-rechts">
+        <h3 class="kf-titel">Häufig gestellte Fragen</h3>
+        <div class="faq-list kf-liste">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Was macht eine Online Marketing Agentur in Zürich wie Klarton?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Wir planen, schalten und optimieren Ihre Kampagnen auf Google und Meta, bauen die Funnels dahinter und melden zurück, was jeder Franken gebracht hat.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Was kostet eine professionelle Google Ads Agentur in Zürich?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Die Betreuung startet bei CHF 740 im Monat, das Komplettpaket liegt bei CHF 2'250. Dazu kommt Ihr Werbebudget, das zu hundert Prozent bei Google bleibt.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Wie schnell sehe ich erste Resultate?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Erste Anfragen kommen meist in den ersten zwei Wochen. Belastbare Zahlen zur Steuerung haben wir nach vier bis sechs Wochen.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Google Ads oder Meta Ads?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Das hängt davon ab, ob nach Ihnen gesucht wird oder ob Sie Nachfrage erst wecken müssen. Im Erstgespräch sagen wir Ihnen, womit Sie anfangen sollten.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Gibt es lange Vertragslaufzeiten?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Nein. Kurze Mindestlaufzeit für eine saubere Lernphase, danach monatlich kündbar.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Wie viel Aufwand habe ich dabei?<span class="faq-plus" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Rund dreissig Minuten im Monat. Den Rest machen wir, Sie entscheiden nur über Budget und Richtung.</div></div>
+          </div>
+        </div>
+        <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="svc-cta kf-alle">Alle Fragen ansehen <span class="arr">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
 
+
+</div><!-- /.seite -->
+
+<?php get_template_part( 'template-parts/klarton-vorfuss' ); ?>
 
 <?php get_template_part( 'template-parts/klarton-footer' ); ?>
 
