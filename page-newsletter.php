@@ -88,9 +88,8 @@ $rankmath_active = function_exists( 'rank_math' ) || defined( 'RANK_MATH_VERSION
   <div class="container">
     <?php
     $paged = max( 1, get_query_var( 'paged' ) );
-    $nl_cat = get_term_by( 'slug', 'newsletter', 'category' );
     $nl_query = new WP_Query( array(
-      'cat'            => $nl_cat ? $nl_cat->term_id : 0,
+      'post_type'      => 'post',
       'posts_per_page' => 9,
       'paged'          => $paged,
       'post_status'    => 'publish',
