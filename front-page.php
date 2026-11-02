@@ -49,9 +49,9 @@ $assets = get_stylesheet_directory_uri() . '/assets';
       <span class="eyebrow on-dark"><span class="dot"></span>Google, Meta &amp; LinkedIn Ads <span class="count">/ Zürich &amp; Schweiz</span></span>
     </div>
     <h1>
+      <span class="line h1-kicker"><span>Werbeagentur Zürich.</span></span>
       <span class="line"><span>Richtig gemacht.</span></span>
-      <span class="line"><span>Messbar</span></span>
-      <span class="line"><span><em>verkauft.</em></span></span>
+      <span class="line"><span>Messbar <em>verkauft.</em></span></span>
     </h1>
     <div class="hero-lower">
       <p class="hero-sub">Google, Meta und LinkedIn Ads für Schweizer Unternehmen, die Kunden statt Klicks wollen.</p>

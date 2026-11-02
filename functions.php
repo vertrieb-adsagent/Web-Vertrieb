@@ -287,7 +287,7 @@ add_filter( 'rank_math/opengraph/twitter/image', function ( $image ) {
 
 // Startseiten-Titel auf das Haupt-Keyword setzen (statt "Home - Klarton Agency").
 add_filter( 'rank_math/frontend/title', function ( $title ) {
-	return is_front_page() ? 'Google, Meta & LinkedIn Ads - Kunden statt Klicks | Klarton Zürich' : $title;
+	return is_front_page() ? 'Werbeagentur Zürich · Google, Meta & LinkedIn Ads | Klarton' : $title;
 } );
 
 // Rechtsseiten von der Indexierung ausschliessen (noindex), Crawl-Budget lenken.
